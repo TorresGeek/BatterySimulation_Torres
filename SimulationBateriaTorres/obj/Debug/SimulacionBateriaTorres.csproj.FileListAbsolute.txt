@@ -14,3 +14,11 @@ C:\Users\TorresGeek\Desktop\SimulationBateriaTorres\SimulationBateriaTorres\obj\
 C:\Users\TorresGeek\Desktop\SimulationBateriaTorres\SimulationBateriaTorres\obj\Debug\SimulacionBateriaTorres.csproj.GenerateResource.Cache
 C:\Users\TorresGeek\Desktop\SimulationBateriaTorres\SimulationBateriaTorres\obj\Debug\SimulacionBateriaTorres.exe
 C:\Users\TorresGeek\Desktop\SimulationBateriaTorres\SimulationBateriaTorres\obj\Debug\SimulacionBateriaTorres.pdb
+C:\Users\CoronelMachine\Documents\GithubProjects\SimulationBateriaTorres\SimulationBateriaTorres\bin\Debug\SimulacionBateriaTorres.exe.config
+C:\Users\CoronelMachine\Documents\GithubProjects\SimulationBateriaTorres\SimulationBateriaTorres\bin\Debug\SimulacionBateriaTorres.exe
+C:\Users\CoronelMachine\Documents\GithubProjects\SimulationBateriaTorres\SimulationBateriaTorres\bin\Debug\SimulacionBateriaTorres.pdb
+C:\Users\CoronelMachine\Documents\GithubProjects\SimulationBateriaTorres\SimulationBateriaTorres\obj\Debug\SimulacionBateriaTorres.csprojResolveAssemblyReference.cache
+C:\Users\CoronelMachine\Documents\GithubProjects\SimulationBateriaTorres\SimulationBateriaTorres\obj\Debug\SimulationBateriaTorres.MainForm.resources
+C:\Users\CoronelMachine\Documents\GithubProjects\SimulationBateriaTorres\SimulationBateriaTorres\obj\Debug\SimulacionBateriaTorres.csproj.GenerateResource.Cache
+C:\Users\CoronelMachine\Documents\GithubProjects\SimulationBateriaTorres\SimulationBateriaTorres\obj\Debug\SimulacionBateriaTorres.exe
+C:\Users\CoronelMachine\Documents\GithubProjects\SimulationBateriaTorres\SimulationBateriaTorres\obj\Debug\SimulacionBateriaTorres.pdb

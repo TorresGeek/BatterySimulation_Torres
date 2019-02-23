@@ -17,7 +17,6 @@
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.Label label4;
 
 		protected override void Dispose(bool disposing)
 		{
@@ -50,7 +49,6 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.label3 = new System.Windows.Forms.Label();
-			this.label4 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.TbVolumen)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.TbBrillo)).BeginInit();
 			this.SuspendLayout();
@@ -67,7 +65,7 @@
 			// 
 			// TbVolumen
 			// 
-			this.TbVolumen.Location = new System.Drawing.Point(13, 160);
+			this.TbVolumen.Location = new System.Drawing.Point(22, 160);
 			this.TbVolumen.Name = "TbVolumen";
 			this.TbVolumen.Orientation = System.Windows.Forms.Orientation.Vertical;
 			this.TbVolumen.Size = new System.Drawing.Size(45, 246);
@@ -106,7 +104,7 @@
 			this.BtnDescarga.Name = "BtnDescarga";
 			this.BtnDescarga.Size = new System.Drawing.Size(359, 68);
 			this.BtnDescarga.TabIndex = 5;
-			this.BtnDescarga.Text = "Descargar";
+			this.BtnDescarga.Text = "Discharge";
 			this.BtnDescarga.UseVisualStyleBackColor = true;
 			this.BtnDescarga.Click += new System.EventHandler(this.BtnDescargaClick);
 			// 
@@ -116,7 +114,7 @@
 			this.CbCargador.Name = "CbCargador";
 			this.CbCargador.Size = new System.Drawing.Size(145, 24);
 			this.CbCargador.TabIndex = 6;
-			this.CbCargador.Text = "Conectar cargador";
+			this.CbCargador.Text = "plug charger";
 			this.CbCargador.UseVisualStyleBackColor = true;
 			this.CbCargador.CheckedChanged += new System.EventHandler(this.CbCargadorCheckedChanged);
 			// 
@@ -126,7 +124,7 @@
 			this.LabelHora.Name = "LabelHora";
 			this.LabelHora.Size = new System.Drawing.Size(100, 23);
 			this.LabelHora.TabIndex = 7;
-			this.LabelHora.Text = "-Hora-";
+			this.LabelHora.Text = "-Time-";
 			// 
 			// BtnApagar
 			// 
@@ -149,17 +147,17 @@
 			// 
 			this.label1.Location = new System.Drawing.Point(13, 134);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(45, 23);
+			this.label1.Size = new System.Drawing.Size(54, 23);
 			this.label1.TabIndex = 9;
-			this.label1.Text = "Volumen";
+			this.label1.Text = "Speakers";
 			// 
 			// label2
 			// 
-			this.label2.Location = new System.Drawing.Point(264, 134);
+			this.label2.Location = new System.Drawing.Point(248, 134);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(45, 23);
+			this.label2.Size = new System.Drawing.Size(68, 23);
 			this.label2.TabIndex = 10;
-			this.label2.Text = "Brillo";
+			this.label2.Text = "Brightness";
 			this.label2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			// 
 			// panel1
@@ -180,21 +178,11 @@
 			this.label3.Text = "Torres Velarde Alfredo";
 			this.label3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			// 
-			// label4
-			// 
-			this.label4.Location = new System.Drawing.Point(566, 362);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(227, 23);
-			this.label4.TabIndex = 13;
-			this.label4.Text = "171000250";
-			this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(805, 485);
-			this.Controls.Add(this.label4);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.label2);
@@ -213,7 +201,7 @@
 			this.MinimizeBox = false;
 			this.MinimumSize = new System.Drawing.Size(821, 524);
 			this.Name = "MainForm";
-			this.Text = "SimulacionBateriaTorres";
+			this.Text = "BatterySimulation - Torres";
 			this.Load += new System.EventHandler(this.MainFormLoad);
 			((System.ComponentModel.ISupportInitialize)(this.TbVolumen)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.TbBrillo)).EndInit();

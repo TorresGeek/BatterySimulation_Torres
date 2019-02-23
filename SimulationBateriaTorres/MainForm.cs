@@ -104,14 +104,15 @@ namespace SimulationBateriaTorres
 			if(PbBateria.Value >= 1000 && !BateriaLlena)
 			{
 				BateriaLlena = true;
-				Data.Mensaje = "La bateria esta completamente cargada";
+				//Data.Mensaje = "La bateria esta completamente cargada";
+				Data.Mensaje = "The battery is full.";
 				
 				MyEventHandler(Data, null);
 			}			
 			//Condicion que controla la advertencia de bateria baja
 			else if(PbBateria.Value <= 150 && PbBateria.Value > 0 && !BateriaAdvertencia && !Conectado)
 			{
-				Data.Mensaje = "Conecte el cargador";
+				Data.Mensaje = "Connect the charger";
 				BateriaAdvertencia = true;
 				
 				MyEventHandler(Data, null);
@@ -119,7 +120,7 @@ namespace SimulationBateriaTorres
 			//Condicion que controla la bateria vacia			
 			else if(PbBateria.Value == 0 && !BateriaVacia)
 			{
-				Data.Mensaje = "El equipo se apagara";
+				Data.Mensaje = "The PC will shut down.";
 				Data.Apagar = true;
 				BateriaVacia = true;
 				
@@ -133,7 +134,7 @@ namespace SimulationBateriaTorres
 		void CbCargadorCheckedChanged(object sender, EventArgs e)
 		{
 			Conectado = CbCargador.Checked;			
-			CbCargador.Text = (Conectado) ? "Desconectar cargador" : "Conectar cargador";
+			CbCargador.Text = (Conectado) ? "unplug the charger" : "plug the chargerr";
 		}
 			
 		
