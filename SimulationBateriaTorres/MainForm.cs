@@ -11,13 +11,13 @@ namespace SimulationBateriaTorres
 		EventHandler MyEventHandler;
 		
 		//Bool que controla la carga de bateria
-		bool Conectado = false;
+		bool Plugged = false;
 		
 		
 		//Banderas??? - ControlVars
-		bool BateriaAdvertencia = false;
-		bool BateriaLlena = false;
-		bool BateriaVacia = false;
+		bool BatteryWarining = false;
+		bool BatteryFull = false;
+		bool BatteryEmpty = false;
 		
 		//Clase contenedora de Datos
 		DatosEvento Data = new DatosEvento();
@@ -37,24 +37,24 @@ namespace SimulationBateriaTorres
 		//Esta funcion es la que llama el Evento
 		//Contiene el Mensaje a mostrar - Controlado por las condiciones en Timer
 		//Contiene condicional que apaga el equipo
-		void EventoAviso(object Sender, EventArgs e)
+		void MessageEvent(object Sender, EventArgs e)
 		{
 			MessageBox.Show(((DatosEvento)Sender).Mensaje);
 			
 			if(((DatosEvento)Sender).Apagar)
-				Apagar();
+				Shutdown();
 		}
 		
 		
 		//Funcion de descarga de bateria
-		void Descargar(int i)
+		void Discharge(int i)
 		{
 			PbBateria.Increment(-(TbVolumen.Value + TbBrillo.Value + i));
 		}
 				
 
 		//Funcion que Apaga el equipo		
-		void Apagar()
+		void Shutdown()
 		{
 			Close();
 		}
@@ -67,7 +67,7 @@ namespace SimulationBateriaTorres
 		//MainFormLoad - Simplemente carga el evento del aviso de bateria
 		void MainFormLoad(object sender, EventArgs e)
 		{
-			MyEventHandler += EventoAviso;
+			MyEventHandler += MessageEvent;
 		}
 		
 		
@@ -79,17 +79,17 @@ namespace SimulationBateriaTorres
 			
 			
 			//Bloque que controla la carga y descarga
-			if(Conectado)
+			if(Plugged)
 			{
-				BateriaAdvertencia = false;
-				BateriaVacia = false;
+				BatteryWarining = false;
+				BatteryEmpty = false;
 				
 				PbBateria.Increment(50);
 			}
 			else
 			{
-				Descargar(1);
-				BateriaLlena = false;
+				Discharge(1);
+				BatteryFull = false;
 			}
 			
 			
@@ -101,28 +101,27 @@ namespace SimulationBateriaTorres
 			//BateriaVacia
 			
 			//Condicion que controla la bateria Llena
-			if(PbBateria.Value >= 1000 && !BateriaLlena)
+			if(PbBateria.Value >= 1000 && !BatteryFull)
 			{
-				BateriaLlena = true;
-				//Data.Mensaje = "La bateria esta completamente cargada";
+				BatteryFull = true;
 				Data.Mensaje = "The battery is full.";
 				
 				MyEventHandler(Data, null);
 			}			
 			//Condicion que controla la advertencia de bateria baja
-			else if(PbBateria.Value <= 150 && PbBateria.Value > 0 && !BateriaAdvertencia && !Conectado)
+			else if(PbBateria.Value <= 150 && PbBateria.Value > 0 && !BatteryWarining && !Plugged)
 			{
 				Data.Mensaje = "Connect the charger";
-				BateriaAdvertencia = true;
+				BatteryWarining = true;
 				
 				MyEventHandler(Data, null);
 			}	
 			//Condicion que controla la bateria vacia			
-			else if(PbBateria.Value == 0 && !BateriaVacia)
+			else if(PbBateria.Value == 0 && !BatteryEmpty)
 			{
 				Data.Mensaje = "The PC will shut down.";
 				Data.Apagar = true;
-				BateriaVacia = true;
+				BatteryEmpty = true;
 				
 				MyEventHandler(Data, null);
 			}
@@ -133,23 +132,23 @@ namespace SimulationBateriaTorres
 		//Controla la carga de la beteria (Boton) para conectar/desconectar cargador
 		void CbCargadorCheckedChanged(object sender, EventArgs e)
 		{
-			Conectado = CbCargador.Checked;			
-			CbCargador.Text = (Conectado) ? "unplug the charger" : "plug the chargerr";
+			Plugged = CbCargador.Checked;			
+			CbCargador.Text = (Plugged) ? "unplug the charger" : "plug the chargerr";
 		}
 			
 		
 		//Boton de apagado (Llama al metodo Apagar)
 		void BtnApagarClick(object sender, EventArgs e)
 		{
-			Apagar();
+			Shutdown();
 		}
 			
 
 		//Boton debug - Descarar rapidamente		
 		void BtnDescargaClick(object sender, EventArgs e)
 		{
-			if(!Conectado)
-				Descargar(50);
+			if(!Plugged)
+				Discharge(50);
 		}
 		
 		
