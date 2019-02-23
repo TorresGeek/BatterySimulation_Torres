@@ -1,8 +1,0 @@
-C:\Users\CoronelMachine\Documents\GithubProjects\SimulationBateriaTorres\SimulationBateriaTorres\bin\Debug\BatterySimulation_Torres.exe.config
-C:\Users\CoronelMachine\Documents\GithubProjects\SimulationBateriaTorres\SimulationBateriaTorres\bin\Debug\BatterySimulation_Torres.exe
-C:\Users\CoronelMachine\Documents\GithubProjects\SimulationBateriaTorres\SimulationBateriaTorres\bin\Debug\BatterySimulation_Torres.pdb
-C:\Users\CoronelMachine\Documents\GithubProjects\SimulationBateriaTorres\SimulationBateriaTorres\obj\Debug\BatterySimulation_Torres.csprojResolveAssemblyReference.cache
-C:\Users\CoronelMachine\Documents\GithubProjects\SimulationBateriaTorres\SimulationBateriaTorres\obj\Debug\SimulationBateriaTorres.MainForm.resources
-C:\Users\CoronelMachine\Documents\GithubProjects\SimulationBateriaTorres\SimulationBateriaTorres\obj\Debug\BatterySimulation_Torres.csproj.GenerateResource.Cache
-C:\Users\CoronelMachine\Documents\GithubProjects\SimulationBateriaTorres\SimulationBateriaTorres\obj\Debug\BatterySimulation_Torres.exe
-C:\Users\CoronelMachine\Documents\GithubProjects\SimulationBateriaTorres\SimulationBateriaTorres\obj\Debug\BatterySimulation_Torres.pdb
