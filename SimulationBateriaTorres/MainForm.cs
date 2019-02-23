@@ -47,7 +47,7 @@ namespace SimulationBateriaTorres
 		//DischargueBatteryMethod
 		void Discharge(int i)
 		{
-			PbBateria.Increment(-(TbVolumen.Value + TbBrillo.Value + i));
+			PbBattery.Increment(-(TbVolumen.Value + TbBrightness.Value + i));
 		}
 				
 
@@ -73,7 +73,7 @@ namespace SimulationBateriaTorres
 		void TimerTick(object sender, EventArgs e)
 		{
 			//displays time
-			LabelHora.Text = DateTime.Now.ToString("T");
+			LabelTime.Text = DateTime.Now.ToString("T");
 			
 			
 			//Charge/Uncharge CodeBlock
@@ -82,7 +82,7 @@ namespace SimulationBateriaTorres
 				BatteryWarining = false;
 				BatteryEmpty = false;
 				
-				PbBateria.Increment(50);
+				PbBattery.Increment(50);
 			}
 			else
 			{
@@ -93,7 +93,7 @@ namespace SimulationBateriaTorres
 			
 			
 			//Full-Battery Conditions
-			if(PbBateria.Value >= 1000 && !BatteryFull)
+			if(PbBattery.Value >= 1000 && !BatteryFull)
 			{
 				BatteryFull = true;
 				Data.Mensaje = "The battery is full.";
@@ -101,7 +101,7 @@ namespace SimulationBateriaTorres
 				MyEventHandler(Data, null);
 			}			
 			//Warning-Battery Conditions
-			else if(PbBateria.Value <= 150 && PbBateria.Value > 0 && !BatteryWarining && !Plugged)
+			else if(PbBattery.Value <= 150 && PbBattery.Value > 0 && !BatteryWarining && !Plugged)
 			{
 				Data.Mensaje = "Connect the charger";
 				BatteryWarining = true;
@@ -109,7 +109,7 @@ namespace SimulationBateriaTorres
 				MyEventHandler(Data, null);
 			}	
 			//Empty-Battery Conditions		
-			else if(PbBateria.Value == 0 && !BatteryEmpty)
+			else if(PbBattery.Value == 0 && !BatteryEmpty)
 			{
 				Data.Mensaje = "The PC will shut down.";
 				Data.Apagar = true;
@@ -124,8 +124,8 @@ namespace SimulationBateriaTorres
 		//Plug/unplug Checkbox
 		void CbCargadorCheckedChanged(object sender, EventArgs e)
 		{
-			Plugged = CbCargador.Checked;			
-			CbCargador.Text = (Plugged) ? "unplug the charger" : "plug the chargerr";
+			Plugged = CbCharger.Checked;			
+			CbCharger.Text = (Plugged) ? "unplug the charger" : "plug the chargerr";
 		}
 			
 		
@@ -153,7 +153,7 @@ namespace SimulationBateriaTorres
 		//ScrollBrillo - Change Brightness Text Label
 		void TbBrilloScroll(object sender, EventArgs e)
 		{
-			LabelBrillo.Text = TbBrillo.Value.ToString();
+			LabelBrightness.Text = TbBrightness.Value.ToString();
 		}	
 
 #endregion
