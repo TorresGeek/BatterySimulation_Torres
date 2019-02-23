@@ -1,0 +1,8 @@
+C:\Users\CoronelMachine\Documents\SharpDevelop Projects\SimulationBateriaTorres\SimulationBateriaTorres\bin\Debug\SimulationBateriaTorres.exe.config
+C:\Users\CoronelMachine\Documents\SharpDevelop Projects\SimulationBateriaTorres\SimulationBateriaTorres\bin\Debug\SimulationBateriaTorres.exe
+C:\Users\CoronelMachine\Documents\SharpDevelop Projects\SimulationBateriaTorres\SimulationBateriaTorres\bin\Debug\SimulationBateriaTorres.pdb
+C:\Users\CoronelMachine\Documents\SharpDevelop Projects\SimulationBateriaTorres\SimulationBateriaTorres\obj\Debug\SimulationBateriaTorres.csprojResolveAssemblyReference.cache
+C:\Users\CoronelMachine\Documents\SharpDevelop Projects\SimulationBateriaTorres\SimulationBateriaTorres\obj\Debug\SimulationBateriaTorres.exe
+C:\Users\CoronelMachine\Documents\SharpDevelop Projects\SimulationBateriaTorres\SimulationBateriaTorres\obj\Debug\SimulationBateriaTorres.pdb
+C:\Users\CoronelMachine\Documents\SharpDevelop Projects\SimulationBateriaTorres\SimulationBateriaTorres\obj\Debug\SimulationBateriaTorres.MainForm.resources
+C:\Users\CoronelMachine\Documents\SharpDevelop Projects\SimulationBateriaTorres\SimulationBateriaTorres\obj\Debug\SimulationBateriaTorres.csproj.GenerateResource.Cache
