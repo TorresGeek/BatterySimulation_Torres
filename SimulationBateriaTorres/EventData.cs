@@ -2,7 +2,7 @@
 
 namespace SimulationBateriaTorres
 {
-	public class DatosEvento
+	public class EventData
 	{
 		public string Mensaje;
 		public bool Apagar;

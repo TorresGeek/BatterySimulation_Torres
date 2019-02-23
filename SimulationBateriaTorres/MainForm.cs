@@ -10,17 +10,17 @@ namespace SimulationBateriaTorres
 		//Eventhandler	
 		EventHandler MyEventHandler;
 		
-		//Bool que controla la carga de bateria
+		//This bool Control the Charge/uncharge of the Battery
 		bool Plugged = false;
 		
 		
-		//Banderas??? - ControlVars
+		//ControlVars
 		bool BatteryWarining = false;
 		bool BatteryFull = false;
 		bool BatteryEmpty = false;
 		
-		//Clase contenedora de Datos
-		DatosEvento Data = new DatosEvento();
+		//ContainerClass
+		EventData Data = new EventData();
 	
 
 		
@@ -31,29 +31,27 @@ namespace SimulationBateriaTorres
 		
 		
 		
-#region MisFunciones
+#region MyMethods
 		
 		
-		//Esta funcion es la que llama el Evento
-		//Contiene el Mensaje a mostrar - Controlado por las condiciones en Timer
-		//Contiene condicional que apaga el equipo
+		//Main event Method
 		void MessageEvent(object Sender, EventArgs e)
 		{
-			MessageBox.Show(((DatosEvento)Sender).Mensaje);
+			MessageBox.Show(((EventData)Sender).Mensaje);
 			
-			if(((DatosEvento)Sender).Apagar)
+			if(((EventData)Sender).Apagar)
 				Shutdown();
 		}
 		
 		
-		//Funcion de descarga de bateria
+		//DischargueBatteryMethod
 		void Discharge(int i)
 		{
 			PbBateria.Increment(-(TbVolumen.Value + TbBrillo.Value + i));
 		}
 				
 
-		//Funcion que Apaga el equipo		
+		//Shutdown the PC	
 		void Shutdown()
 		{
 			Close();
@@ -61,24 +59,24 @@ namespace SimulationBateriaTorres
 		
 #endregion
 		
-#region DefaultEvents
+#region DefaultMethods
 
 
-		//MainFormLoad - Simplemente carga el evento del aviso de bateria
+		//MainFormLoad - Init Eventhandler
 		void MainFormLoad(object sender, EventArgs e)
 		{
 			MyEventHandler += MessageEvent;
 		}
 		
 		
-		//Timer - Nucleo principal del funcionamiento de la pila
+		//Timer - "MainMethod"
 		void TimerTick(object sender, EventArgs e)
 		{
-			//Muestra la hora en la parte inferior
+			//displays time
 			LabelHora.Text = DateTime.Now.ToString("T");
 			
 			
-			//Bloque que controla la carga y descarga
+			//Charge/Uncharge CodeBlock
 			if(Plugged)
 			{
 				BatteryWarining = false;
@@ -94,13 +92,7 @@ namespace SimulationBateriaTorres
 			
 			
 			
-			//El siguiente bloque de condiciones es controlado
-			//por las "Banderas":
-			//BateriaLlena
-			//BateriaAdvertencia
-			//BateriaVacia
-			
-			//Condicion que controla la bateria Llena
+			//Full-Battery Conditions
 			if(PbBateria.Value >= 1000 && !BatteryFull)
 			{
 				BatteryFull = true;
@@ -108,7 +100,7 @@ namespace SimulationBateriaTorres
 				
 				MyEventHandler(Data, null);
 			}			
-			//Condicion que controla la advertencia de bateria baja
+			//Warning-Battery Conditions
 			else if(PbBateria.Value <= 150 && PbBateria.Value > 0 && !BatteryWarining && !Plugged)
 			{
 				Data.Mensaje = "Connect the charger";
@@ -116,7 +108,7 @@ namespace SimulationBateriaTorres
 				
 				MyEventHandler(Data, null);
 			}	
-			//Condicion que controla la bateria vacia			
+			//Empty-Battery Conditions		
 			else if(PbBateria.Value == 0 && !BatteryEmpty)
 			{
 				Data.Mensaje = "The PC will shut down.";
@@ -129,7 +121,7 @@ namespace SimulationBateriaTorres
 
 		
 		
-		//Controla la carga de la beteria (Boton) para conectar/desconectar cargador
+		//Plug/unplug Checkbox
 		void CbCargadorCheckedChanged(object sender, EventArgs e)
 		{
 			Plugged = CbCargador.Checked;			
@@ -137,14 +129,14 @@ namespace SimulationBateriaTorres
 		}
 			
 		
-		//Boton de apagado (Llama al metodo Apagar)
+		//Shutdown Button
 		void BtnApagarClick(object sender, EventArgs e)
 		{
 			Shutdown();
 		}
 			
 
-		//Boton debug - Descarar rapidamente		
+		//DebugButton - FastDischarge	
 		void BtnDescargaClick(object sender, EventArgs e)
 		{
 			if(!Plugged)
@@ -152,13 +144,13 @@ namespace SimulationBateriaTorres
 		}
 		
 		
-		//ScrollVolumen - Cambia el texto del volumen
+		//ScrollVolumen - Change Volumen Text Label
 		void TbVolumenScroll(object sender, EventArgs e)
 		{
 			LabelVolumen.Text = TbVolumen.Value.ToString();
 		}
 		
-		//ScrollBrillo - Cambia el texto del brillo
+		//ScrollBrillo - Change Brightness Text Label
 		void TbBrilloScroll(object sender, EventArgs e)
 		{
 			LabelBrillo.Text = TbBrillo.Value.ToString();
